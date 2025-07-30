@@ -83,3 +83,17 @@ select {
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff8fb;
+  font-size: 1.1rem;
+  color: #4b0049;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: #800040; /* darker hover for more contrast */
+}
