@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Styling Tips</title>
+  <title>Haircut Quiz</title>
   <link rel="stylesheet" href="styles.css" />
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-J8FS2989FR"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-J8FS2989FR');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J8FS2989FR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-J8FS2989FR');
+  </script>
 </head>
 <body>
   <header>
@@ -21,60 +21,62 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="hair-types.html">Hair Types</a>
-      <a href="tips.html">Styling Tips</a>
+      <a href="tips.html">Haircut Quiz</a> <!-- Renamed -->
       <a href="about.html">About</a>
     </nav>
   </header>
-<main>
-  <section>
-    <h2>Styling Tips & Haircut Quiz</h2>
-    <p><strong>Find your perfect hairstyle!</strong> Select your hair type and routine, then click the button below to get personalized haircut suggestions.</p>
 
-    <form id="styleQuiz">
-      <label for="hairType">What is your hair type?</label><br />
-      <select id="hairType" name="hairType">
-        <option value="1">Type 1: Straight</option>
-        <option value="2">Type 2: Wavy</option>
-        <option value="3">Type 3: Curly</option>
-        <option value="4">Type 4: Coily/Kinky</option>
-      </select><br /><br />
+  <main>
+    <section>
+      <h2>You are on the Haircut Quiz Page</h2>
+      <p><strong>Find your perfect hairstyle!</strong> Use the quick quiz below to get a personalized haircut recommendation based on your hair type and daily routine.</p>
 
-      <label for="maintenance">How much time do you spend on hair maintenance daily?</label><br />
-      <select id="maintenance" name="maintenance">
-        <option value="low">Less than 10 mins</option>
-        <option value="medium">10–30 mins</option>
-        <option value="high">More than 30 mins</option>
-      </select><br /><br />
+      <form id="styleQuiz">
+        <h3>Step 1: What is your hair type?</h3>
+        <select id="hairType" name="hairType">
+          <option value="1">Type 1: Straight</option>
+          <option value="2">Type 2: Wavy</option>
+          <option value="3">Type 3: Curly</option>
+          <option value="4">Type 4: Coily/Kinky</option>
+        </select><br /><br />
 
-      <button type="button" onclick="showResult()">See My Style Match</button>
-    </form>
+        <h3>Step 2: How much time do you spend on hair maintenance daily?</h3>
+        <select id="maintenance" name="maintenance">
+          <option value="low">Less than 10 mins</option>
+          <option value="medium">10–30 mins</option>
+          <option value="high">More than 30 mins</option>
+        </select><br /><br />
 
-    <div id="result" class="result-box"></div>
+        <button type="button" onclick="showResult()">See My Style Match</button>
+      </form>
 
-    <script>
-      function showResult() {
-        const hairType = document.getElementById("hairType").value;
-        const maintenance = document.getElementById("maintenance").value;
-        let suggestion = "";
+      <div id="result" class="result-box"></div>
 
-        if (hairType === "1") {
-          suggestion = maintenance === "low" ? "Blunt Bob or Long Layers" : "Sleek Pixie or Layered Lob";
-        } else if (hairType === "2") {
-          suggestion = maintenance === "low" ? "Shoulder-Length Shag" : "Beach Waves with Curtain Bangs";
-        } else if (hairType === "3") {
-          suggestion = maintenance === "low" ? "Curly Bob or Pineapple Updo" : "Layered Fro or Defined Ringlets";
-        } else if (hairType === "4") {
-          suggestion = maintenance === "low" ? "Tapered Cut or Puff Bun" : "Twist-Outs or Bantu Knots";
+      <script>
+        function showResult() {
+          const hairType = document.getElementById("hairType").value;
+          const maintenance = document.getElementById("maintenance").value;
+          let suggestion = "";
+
+          if (hairType === "1") {
+            suggestion = maintenance === "low" ? "Blunt Bob or Long Layers" : "Sleek Pixie or Layered Lob";
+          } else if (hairType === "2") {
+            suggestion = maintenance === "low" ? "Shoulder-Length Shag" : "Beach Waves with Curtain Bangs";
+          } else if (hairType === "3") {
+            suggestion = maintenance === "low" ? "Curly Bob or Pineapple Updo" : "Layered Fro or Defined Ringlets";
+          } else if (hairType === "4") {
+            suggestion = maintenance === "low" ? "Tapered Cut or Puff Bun" : "Twist-Outs or Bantu Knots";
+          }
+
+          document.getElementById("result").innerHTML = `<strong>Recommended Style:</strong> ${suggestion}`;
         }
-
-        document.getElementById("result").innerHTML = `<strong>Recommended Style:</strong> ${suggestion}`;
-      }
-    </script>
-  </section>
-</main>
+      </script>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Hairstyle and More</p>
   </footer>
 </body>
 </html>
+
